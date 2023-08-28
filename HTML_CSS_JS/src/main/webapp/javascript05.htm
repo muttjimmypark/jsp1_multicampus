@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+<script>
+	
+	function event_test() {
+		alert("버튼이 클릭됐습니다!");
+	}
+	
+	function loadMsg() {
+		alert("접속을 환영합니다");
+	}
+	
+	function getFocus(x) {
+		alert(x.name+ "위치에 커서가 존재함");
+	}
+	
+	function lostFocus(x) {
+		alert(x.name+ "위치에서 커서가 나감");		
+	}
+	
+</script>
+</head>
+<body onload="loadMsg()">
+	
+	<input type="button" value="대화상자 열기" onclick="event_test()">
+	
+	<form name="testForm">
+		<!-- onfocus : 선택되어서 커서가 깜빡 -->
+		<!-- onblur : 선택 해제되어서 커서가 없음 -->
+		이름 : <input type="text" name="userName" onfocus="getFocus(this)">
+		주소 : <input type="text" name="userAddress" onblur="lostFocus(this)">
+	</form>
+</body>
+</html>

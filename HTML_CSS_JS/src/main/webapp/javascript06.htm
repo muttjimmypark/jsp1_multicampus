@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+<script>
+	function btnOnClick() {
+		var a = document.getElementById('testDiv');
+		a.innerHTML = "hello " + document.testForm.userName.value + " world!";
+	}
+</script>
+</head>
+<body>
+	
+	<form name = "testForm">
+		<label>
+			이름 : <input type="text" id="userName" size="20"><br>
+			<input type="button" value="전송" onclick="btnOnClick()">
+		</label>
+		
+		<div id="testDiv"></div>
+	</form>
+
+</body>
+</html>

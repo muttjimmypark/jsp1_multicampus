@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>폼태그 연습</title>
+</head>
+<body>
+<!--
+	폼을 구성하는 태그들
+	- 폼은 데이터를 전송할 때 사용하는 태그
+	ex> 회원가입 : 이름, 전화번호, 주소 등
+	
+	자신의 태그 내에 있는 데이터를
+	지정한 웹 주소로 전송해준다.
+	
+	데이터 전송방식
+	- GET : 데이터용량 제한이 있었음 256~4096 Byte
+	- POST : 대용량 보낼때 유용
+	
+	폼 태그의 속성
+	- method : 데이터 전송 방식을 지정
+	- name : 폼의 이름을 지정. 자바스크립트에서 폼 내 데이터 구분할때 사용
+	- action : 폼이 가진 데이터를 이동시킬 위치 지정
+	- enctype : 대용량 파일의 데이터 속성을 지정
+	
+	
+	<input type="">
+	type = 한줄 입력받음
+	password = 비밀번호 형태로 입력받음
+	radio = 하나만 선택
+	checkbox = 다중 선택
+	button = 버튼. 기능이 자바스크립트와 연계됨
+	submit = 폼 내용을 action에 지정한 주소로 보낼때
+	reset = 폼 내용을 초기값으로 재설정
+	hidden = 숨김 필드
+	file = 파일 첨부
+	
+	<select> : 목록상자나 콤보박스로 폼을 구성할 때 사용
+	name = 필드의 이름을 지정
+	size = 목록상자에 보여지는 항목 갯수
+	multiple = 여러개의 항목을 선택할 수 있도록 할수있음
+	
+	<option> : select 태그가 만드는 필드의 항목
+	value = 본 항목을 선택했을 때 전송할 값을 지정
+	selected = 기본적으로 선택되는 디폴트 항목 지정
+	
+	<textarea> 여러줄 텍스트 (메일이나 게시글 본문 등)
+	name = ""
+	cols = 대문자 A를 기준으로 너비를 설정
+	rows = 대문자 A를 기준으로 행을 설정
+	readonly = 필드를 읽기전용으로 지정
+	
+ -->
+ 
+ <form action="https://www.naver.com">
+	 <table border = 1>
+		 <tr>
+			 <td>아이디</td>
+			 <td>
+				 <input type="text" name="userId">
+			 </td>
+		 </tr>
+		 <tr>
+			 <td>비밀번호</td>
+			 <td>
+				 <input type="password" name="userPassword">
+			 </td>			 
+		 </tr>
+		 <tr>
+			 <td colspan="2">
+				 <input type="submit" value="로그인">
+			 </td>
+		 </tr>
+		 <div>
+			 <input type="reset">
+		 </div>
+	 </table>
+	 
+	 <select name="과일">
+		 <option value="orange">오렌지</option>
+		 <option value="banana">바나나</option>
+		 <option value="apple">사과</option>		 
+	 </select>
+	 <br><br><br>
+	 
+	 <select name="choice" multiple>
+		 <option value="orange">오렌지</option>
+		 <option value="banana">바나나</option>
+		 <option value="apple">사과</option>
+	 </select>
+	 <br><br><br>
+	 
+	 <textarea name="memo" cols="50" rows="10">---간단한 메시지를 입력하세요---</textarea>
+	 <br><br><br>
+	 
+	 <input type="text" name="simpleMemo" maxlength="6" value="memo">
+	 <input type="radio" name="gender" value="man" checked>남성
+	 <input type="radio" name="gender" value="woman">여성
+	 <br><br><br>
+	 
+	 <input type="checkbox" name="ch" value="1">독서
+	 <input type="checkbox" name="ch" value="2">여행
+	 <input type="checkbox" name="ch" value="3">스포츠
+ </form>
+ 
+</body>
+</html>

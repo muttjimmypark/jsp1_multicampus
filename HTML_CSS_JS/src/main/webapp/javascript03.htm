@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+<script>
+
+var aa = confirm("날씨가 덥나요?"); // =window.confirm
+document.write(aa); // true | false
+
+
+/*
+	function 함수이름(매개변수){ // = java.method
+		실행내용;
+		return 반환값;
+	}
+*/
+function printNoArgs() {
+	document.write("\n\n함수가 호출됐습니다\n인자는 없습니다\n\n");
+}
+printNoArgs();
+
+function printTwoArgs(i, j) {
+	document.write("함수가 호출되었으며\n");
+	document.write(i+ "와 " +j+ "입니다.\n\n");
+}
+printTwoArgs(10,20);
+
+</script>
+</head>
+<body>
+
+</body>
+</html>
