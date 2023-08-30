@@ -30,7 +30,8 @@ public class Hello extends HttpServlet {
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
 		System.out.println("Hello Servlet : GET");
 		
-		/**
+		/** 230830 1600
+		 * 
 		 * Servlet 특징
 		 * 
 		 * 동적 웹어플리케이션 컴포넌트

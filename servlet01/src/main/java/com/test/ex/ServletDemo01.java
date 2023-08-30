@@ -1,6 +1,8 @@
 package com.test.ex;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -35,13 +37,18 @@ public class ServletDemo01 extends HttpServlet {
 	 * HttpServletResponse
 	 * - 응답 content 길이, 타입
 	 * - 화면에 출력해야할 모든 값
-	 * - 주요 메서드 : setContentType(String type), setContentLength(int length), getWriter()
+	 * - 주요 메서드
+	 * > setContentType(String type)
+	 * > setContentLength(int length)
+	 * > getWriter() : 웹브라우저에 출력할 스트림
 	 * 
 	 * doGet()
 	 * - html form태그가 실행할 method=get일때
 	 * - 서블릿 클래스에 매핑된 url로 직접 접속시도가 일어났을때
 	 *     (url입력시 get호출이 기본값이라는 뜻임)
 	 *     
+	 * doPost()
+	 * - html form태그가 실행할 method=post일때
 	 * 
 	 */
 	
@@ -60,7 +67,23 @@ public class ServletDemo01 extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		// response.getWriter().append("Served at: ").append(request.getContextPath());
+		
+		int sum = 0;
+		for(int cnt = 1; cnt <= 100; cnt++) {
+			sum += cnt;
+		}
+		
+		response.setContentType("text/html; charset=euc-kr");
+		PrintWriter out = response.getWriter();
+		out.println("<html>");
+		out.println("<head>");
+		out.println("<title>ZeroBack</title>");
+		out.println("</head>");
+		out.println("<body>");
+		out.printf("My ZeroBack is %d", sum);
+		out.println("</body>");
+		out.println("</html>");
 	}
 
 	/**
@@ -68,7 +91,21 @@ public class ServletDemo01 extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		/*
+		System.out.println("doPost through");
 		doGet(request, response);
+		*/
+
+		response.setContentType("text/html; charset=euc-kr");
+		PrintWriter out = response.getWriter();
+		out.println("<html>");
+		out.println("<head>");
+		out.println("<title>post page</title>");
+		out.println("</head>");
+		out.println("<body>");
+		out.printf("hello post page");
+		out.println("</body>");
+		out.println("</html>");
 	}
 
 }
