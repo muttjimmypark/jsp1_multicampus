@@ -1,6 +1,9 @@
 package com.test.ex;
 
 import java.io.IOException;
+
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -63,6 +66,15 @@ public class CycleEx extends HttpServlet {
     	System.out.println("Here is init()");
     }
     
+    /*
+    @Override
+    protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    	// TODO Auto-generated method stub
+    	//super.service(req, resp);
+    	System.out.println("Here is service()");
+    }
+    */
+    
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
@@ -88,4 +100,24 @@ public class CycleEx extends HttpServlet {
     	System.out.println("Here is destroy()");		
 	}
 
+	
+	/** 15차시
+	 * servlet의 선처리, 후처리
+	 * 선처리 : ~init() ⓐPostConstruct
+	 * > 의존하는 객체를 설정한 이후에, 초기화 작업을 수행할 메서드에 적용
+	 * 
+	 * 후처리 : destroy()~ ⓐPreDestroy
+	 * > 컨테이너에서 객체를 제거하기 전에 호출될 메서드에 적용
+	 * 
+	 */
+	
+	@PostConstruct
+	private void myInit() {
+    	System.out.println("PostConstruct is myInit()");		
+	}
+	
+	@PreDestroy
+	private void myDestroy() {
+    	System.out.println("PreDestroy is myDestroy()");		
+	}
 }
