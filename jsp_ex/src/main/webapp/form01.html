@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>서블릿 폼</title>
+</head>
+<body>
+
+<form action="ex04.jsp" method="post">
+Name : <input type="text" name="userName" size="15" /><br>
+ID : <input type="text" name="userId" size="15" /><br>
+PassWord : <input type="password" name="userPassword" size="15" /><br>
+<br>
+hobby :
+<input type="checkbox" name="userHobby" value="sports" />스포츠
+<input type="checkbox" name="userHobby" value="travel" />여행
+<input type="checkbox" name="userHobby" value="movie" />영화
+<input type="checkbox" name="userHobby" value="hiking" />등산
+<br>
+gender is : 
+<input type="radio" name="gender" value="m" />남성
+<input type="radio" name="gender" value="w" />여성
+<br><br>
+<select name="address1">
+	<option value="sudo">수도권</option>
+	<option value="youngnam">영남</option>
+	<option value="honam">호남</option>
+	<option value="gangwon">강원</option>
+</select>
+<br><br>
+<input type="submit" value="전송">
+<input type="reset" value="초기화">
+</form>
+
+</body>
+</html>
