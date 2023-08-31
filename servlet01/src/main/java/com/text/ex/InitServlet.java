@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebInitParam;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -12,7 +13,10 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class InitServlet
  */
-@WebServlet("/InitServlet")
+@WebServlet(urlPatterns = {"/InitServlet"},
+			initParams = {@WebInitParam(name="id", value="test11"), 
+							@WebInitParam(name="pw", value="3000"),
+							@WebInitParam(name="local", value="busan")})
 public class InitServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
@@ -28,6 +32,11 @@ public class InitServlet extends HttpServlet {
 	 * 1. web.xml에 기술. ServletConfig.getInitParameter()로 접근가능 
 	 * 2. 서블릿파일에 직접 기술.
 	 * 
+	 */
+	
+	/** 18차시
+	 *  초기화 파라미터를 서블릿파일에 직접 기술
+	 *  web.xml 대신 ⓐWebInitParam에 작성
 	 */
        
     /**

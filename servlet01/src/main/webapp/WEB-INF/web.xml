@@ -10,7 +10,7 @@
     <welcome-file>default.htm</welcome-file>
   </welcome-file-list>
   
-  <!-- 서블릿초기화 시작 -->
+  <!-- 서블릿초기화 시작 : InitServlet에서 확인했었음
   <servlet>
   	<servlet-name>ServletInit</servlet-name>
   	<servlet-class>com.text.ex.InitServlet</servlet-class>
@@ -27,12 +27,34 @@
 		<param-name>local</param-name>
 		<param-value>seoul</param-value>
 	</init-param>
-  </servlet>
+  </servlet> -->
   <!-- 
   <servlet-mapping>
   	<servlet-name>ServletInit</servlet-name>
   	<url-pattern>/SI</url-pattern>
   </servlet-mapping>
    -->
+   
+   <!-- ServletContextEx에서 확인 -->
+   <!--  공통되는 초기변수를 선언하는 방법 -->
+   <context-param>
+   	<param-name>id</param-name>
+   	<param-value>test33</param-value>
+   </context-param>
+   <context-param>
+   	<param-name>pw</param-name>
+   	<param-value>ctxtprm</param-value>
+   </context-param>
+   <context-param>
+   	<param-name>local</param-name>
+   	<param-value>gwangju</param-value>
+   </context-param>
   
+  
+  <!--
+  ContextListenerTestClass.ListenerClass -> ContextListenerEx.Servlet 
+   -->
+  <listener>
+  	<listener-class>com.text.ex.ContextListenerTestClass</listener-class>
+  </listener>
 </web-app>
