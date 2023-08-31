@@ -9,4 +9,30 @@
     <welcome-file>default.jsp</welcome-file>
     <welcome-file>default.htm</welcome-file>
   </welcome-file-list>
+  
+  <!-- 서블릿초기화 시작 -->
+  <servlet>
+  	<servlet-name>ServletInit</servlet-name>
+  	<servlet-class>com.text.ex.InitServlet</servlet-class>
+	
+	<init-param>
+		<param-name>id</param-name>
+		<param-value>test</param-value>
+	</init-param>
+	<init-param>
+		<param-name>pw</param-name>
+		<param-value>1324</param-value>
+	</init-param>
+	<init-param>
+		<param-name>local</param-name>
+		<param-value>seoul</param-value>
+	</init-param>
+  </servlet>
+  <!-- 
+  <servlet-mapping>
+  	<servlet-name>ServletInit</servlet-name>
+  	<url-pattern>/SI</url-pattern>
+  </servlet-mapping>
+   -->
+  
 </web-app>
